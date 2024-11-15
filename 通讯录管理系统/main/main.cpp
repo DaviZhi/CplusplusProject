@@ -209,7 +209,7 @@ void Delete_Contact(address_list_t* addr_list)
   else
   {
     for (uint16_t i = isContactExist(addr_list, name_to_be_deleted); 
-      i < addr_list->current_contacts_num; i++)   //删除操作，这里为了方便没有用链表
+      i < addr_list->current_contacts_num; i++)   //删除操作，这里为了方便没有用链表, 可后续优化
     {
       addr_list->contact_array[i] = addr_list->contact_array[i + 1];
     }
@@ -277,14 +277,53 @@ void Modify_Contact(address_list_t* addr_list)
     addr_list->contact_array[isContactExist(addr_list, name_to_be_modified)].name = new_name;
 
     uint16_t new_gender;
-    cout << "请输入性别(MAN/WOMAN/OTHER)：" << endl;
+    cout << "请输入新的性别(MAN/WOMAN/OTHER)：" << endl;
     cout << "0---男" << endl;
     cout << "1---女" << endl;
     cout << "2---其他" << endl;
-    cin >> new_gender;
-    addr_list->contact_array[isContactExist(addr_list, name_to_be_modified)].gender_num = new_gender;
+    while (true)
+    {
+      cin >> new_gender;
+      if (new_gender == MAN || new_gender == WOMAN || new_gender == OTHER)
+      {
+        addr_list->contact_array[isContactExist(addr_list, name_to_be_modified)].gender_num = new_gender;
+        break;
+      }
+      cout << "输入不符合要求，请重新输入" << endl;
+    }
+
+    uint16_t new_age;
+    cout << "请输入新的年龄：" << endl;
+    cin >> new_age;
+    addr_list->contact_array[isContactExist(addr_list, name_to_be_modified)].age = new_age;
+
+    string new_phone_num;
+    cout << "请输入新的电话号码：" << endl;
+    cin >> new_phone_num;
+    addr_list->contact_array[isContactExist(addr_list, name_to_be_modified)].phone_number = new_phone_num;
+
+    string new_address;
+    cout << "请输入新的地址：" << endl;
+    cin >> new_address;
+    addr_list->contact_array[isContactExist(addr_list, name_to_be_modified)].address = new_address;
+
+    cout << "修改成功！" << endl;
+
   }
 }
+
+/* @brief:清空联系人
+ * @param1:通讯录结构体指针
+ */
+void Clear_Contact(address_list_t* addr_list)
+{
+  addr_list->current_contacts_num = 0;
+  cout << "通讯录已清空" << endl;
+  system("pause");
+  system("cls");
+}
+
+/******************Main Function**********************************/
 
 int main()
 {
@@ -323,24 +362,27 @@ int main()
     }
     case MODIFY_CONTACT:
     {
+      Modify_Contact(&address_list);
       break;
     }
     case CLEAR_CONTACT:
     {
+      Clear_Contact(&address_list);
       break;
     }
     case EXIT:
     {
       cout << "欢迎下次使用哦!" << endl;
-//      system("pause");
+      system("pause");
       return 0;
       break;
     }
     default:
       cout << "Error operate!" << endl;
+      system("pause");
+      system("cls");
       break;
     }
   }
-//  system("pause");
   return 0;
 }
