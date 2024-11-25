@@ -1,5 +1,6 @@
 #include <iostream>
 #include "staffManager.h"
+#include "Employee.h"
 
 using namespace std;
 
@@ -21,8 +22,9 @@ int main()
       sm.Exit_System();
       break;
     }
-    case 1:
+    case sm.ADD_STAFF_INFO:
     {
+
       break;
     }
     case 2:

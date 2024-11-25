@@ -21,9 +21,30 @@
     <ClCompile Include="Source\staffManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Employee.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Boss.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\staffManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Staff.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Employee.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Manager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Boss.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

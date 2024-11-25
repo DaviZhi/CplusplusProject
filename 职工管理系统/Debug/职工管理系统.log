@@ -1,4 +1,6 @@
-﻿  staffManager.cpp
-  main.cpp
+﻿  main.cpp
+  Boss.cpp
+  Employee.cpp
+  Manager.cpp
   正在生成代码...
   职工管理系统.vcxproj -> E:\Visual Studio Project\C++ Project\职工管理系统\Debug\职工管理系统.exe
