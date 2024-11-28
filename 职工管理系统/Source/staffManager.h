@@ -7,8 +7,13 @@
  * 
  **/
 #include <iostream>
+#include "Staff.h"
+#include "Employee.h"
+#include "Manager.h"
+#include "Boss.h"
 using namespace std;
 
+/*职工管理抽象类*/
 class StaffManager_c
 {
 public:
@@ -18,7 +23,17 @@ public:
   /*展示菜单*/
   void ShowMenu();
 
+  /*退出系统*/
   void Exit_System();
+
+  /*记录职工人数*/
+  uint16_t memberNum_c;
+
+  /*职工数组指针，存放职工相关信息*/
+  Staff_c** staffArray_c;
+
+  /*添加职工功能*/
+  void Add_Staff();
 
   //析构函数
   ~StaffManager_c();

@@ -24,31 +24,37 @@ int main()
     }
     case sm.ADD_STAFF_INFO:
     {
-
+      sm.Add_Staff();
       break;
     }
-    case 2:
+    case sm.DISPLAY_STAFF_INFO:
     {
+      
       break;
     }
     case 3:
     {
+
       break;
     }
     case 4:
     {
+
       break;
     }
     case 5:
     {
+
       break;
     }
     case 6:
     {
+
       break;
     }
     case 7:
     {
+
       break;
     }
     default:
